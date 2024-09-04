@@ -1,0 +1,1 @@
+Before this I never even heard of the terms GUI and CLI. GUI stands for Graphical user Interface. It allows the user to interact with things. These are what the user primarily sees while being on a computer or phone. CLI stands for command-line interface. This is where  users can make commands that does something to a computers operating system.
