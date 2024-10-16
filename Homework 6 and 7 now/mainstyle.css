@@ -9,3 +9,10 @@
     font-family: Arial;
     font-size: 24px;
 }
+
+body {
+    background-image: url('https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?cs=srgb&dl=pexels-kellie-churchman-371878-1001682.jpg&fm=jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+}
