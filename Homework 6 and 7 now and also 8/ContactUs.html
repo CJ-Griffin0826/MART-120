@@ -8,19 +8,52 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+  <script>
+    function getInformation() {
+        var firstName = document.getElementById("fName").value;
+        var lastName = document.getElementById("lName").value;
+        // window.alert("Hi" + firstName)
+        document.getElementById("message").innerHTML = "My name is" + firstName + " " + lastName;
+    }
+
+    function printQuestion() {
+        document.getElementById("question").innerHTML = "What is 2+2?";
+    }
+  </script>
+
+
+
+
 </header>
 
-<body>
+
+
+
+
+
+
+
+
+<body onload="printQuestion();">
     
     <button type="button" class="btn">Basic</button>
-  <button type="button" class="btn btn-default">Default</button>
-  <button type="button" class="btn btn-primary">Primary</button>
-  <button type="button" class="btn btn-success">Success</button>
-  <button type="button" class="btn btn-info">Info</button>
-  <button type="button" class="btn btn-warning">Warning</button>
-  <button type="button" class="btn btn-danger">Danger</button>
-  <button type="button" class="btn btn-link">Link</button>
+  
+    <button type="button" class="btn btn-default">Default</button>
+  
+    <button type="button" class="btn btn-primary">Primary</button>
+  
+    <button type="button" class="btn btn-success">Success</button>
+  
+    <button type="button" class="btn btn-info">Info</button>
+  
+    <button type="button" class="btn btn-warning">Warning</button>
+  
+    <button type="button" class="btn btn-danger">Danger</button>
+  
+    <button type="button" class="btn btn-link">Link</button>
     
+  
+  
     <h1>Please Provide Personal Information so it is Easy for me to Contact You!</h1>
 
     <br />
@@ -56,7 +89,9 @@
 
        <br />
     
-        <button id="mySubmit" type="button">Submit</button>
+        <button id="mySubmit" onclick="getInformation();">Submit</button>
+        
+        <div id="message"></div>
       
     </form>
 
