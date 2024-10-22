@@ -13,7 +13,7 @@
         var firstName = document.getElementById("fName").value;
         var lastName = document.getElementById("lName").value;
         // window.alert("Hi" + firstName)
-        document.getElementById("message").innerHTML = "My name is" + firstName + " " + lastName;
+        document.getElementById("message").innerHTML = "My name is " + firstName + " " + lastName;
     }
 
     function printQuestion() {
@@ -89,7 +89,7 @@
 
        <br />
     
-        <button id="mySubmit" onclick="getInformation();">Submit</button>
+        <button id="mySubmit" type="button" onclick="getInformation();">Submit</button>
         
         <div id="message"></div>
       
