@@ -13,13 +13,35 @@
         var firstName = document.getElementById("fName").value;
         var lastName = document.getElementById("lName").value;
         // window.alert("Hi" + firstName)
-        document.getElementById("message").innerHTML = "My name is " + firstName + " " + lastName;
     }
 
     function printQuestion() {
-        document.getElementById("question").innerHTML = "What is 2+2?";
+        document.getElementById("question").innerHTML = "Email:";
     }
-  </script>
+ 
+    function checkAnswer() {
+            
+            var emailInput = document.getElementById("Email");
+            
+            var myAnswer = emailInput.value;
+            
+            var messageDiv = document.getElementById("message");
+
+            if (myAnswer.trim() === "") {
+            
+                emailInput.style.border = "2px solid red";
+            
+                messageDiv.innerHTML = "You did not enter your email";
+            
+            } else {
+            
+                emailInput.style.border = "";
+            
+                messageDiv.innerHTML = "Thank you for the Information :) Alen will be in contact soon";
+            }
+        }
+
+ </script>
 
 
 
@@ -36,6 +58,7 @@
 
 <body onload="printQuestion();">
     
+
     <button type="button" class="btn">Basic</button>
   
     <button type="button" class="btn btn-default">Default</button>
@@ -68,7 +91,7 @@
 
         <br />
 
-        Your Email: <input type="text" id="Email"><br>
+        <div id="question"></div> <input type="text" id="Email"><br>
         
     </form>
 
@@ -89,9 +112,8 @@
 
        <br />
     
-        <button id="mySubmit" type="button" onclick="getInformation();">Submit</button>
-        
-        <div id="message"></div>
+       <button id="mySubmit" type="button" onclick="checkAnswer();">Submit</button>
+       <div id="message"></div>
       
     </form>
 
