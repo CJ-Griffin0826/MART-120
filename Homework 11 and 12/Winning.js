@@ -21,14 +21,45 @@ var Y = 0;
 var D = 25;
 
 function setup() {
+    
     createCanvas(800, 600);
+
 }
 
 function draw() {
+
     background(0);
+    
+    obsticalCreation();
+    
+    obsticalMovement();
+
+    mouseShape();
+
+    player();
+
+    movePlayer();
+
+    exit();
+
+    winMessage();
+
+    Border();
+
+}
+
+function obsticalCreation() {
+    
+    fill(0, 0, 240);
+    circle(X, Y, D);
+    
     fill(120, 30, 49);
     circle(x, y, diameter);
 
+}
+
+function obsticalMovement() {
+    
     if (x <= 400) {
         x += 10;
     } else if (x > 400 && x <= 800) {
@@ -53,8 +84,7 @@ function draw() {
         diameter = 25;
     }
 
-    fill(0,0,240);
-    circle(X, Y, D);
+
 
     if (X <= 400) {
         X += 11;
@@ -68,7 +98,7 @@ function draw() {
         Y += 1;
     } else if (Y > 300 && Y <= 600) {
         Y += 43;
-    } else if (y >= 601) {
+    } else if (Y >= 601) {
         Y = 0; 
     }
 
@@ -80,38 +110,71 @@ function draw() {
         D = 60;
     }
     
+}
+
+function mouseShape() {
+    
     fill(200, 100, 20);
     ellipse(mousex, mousey, 15, 50);
 
+}
+
+function player() {
+    
     fill(250, 0, 0);
     circle(LR, UD, 50);
 
+}
+
+function movePlayer() {
+    
     if (keyIsDown(68)) {
-        LR+=5;
-    }   else if (keyIsDown(65)) {
-        LR-=5;
+        LR += 5;
+    } else if (keyIsDown(65)) {
+        LR -= 5;
     }
 
     if (keyIsDown(87)) {
-        UD-=5;
+        UD -= 5;
     } else if (keyIsDown(83)) {
-        UD+=5;
+        UD += 5;
     }
+}
 
-    fill(10,5000,10)
-    rect(200, 0, 400, 40)
+function exit() {
+    
+    fill(10, 5000, 10);
+    rect(200, 0, 400, 40);
 
-    fill(0,0,0)
+    fill(0, 0, 0);
     textSize(32);
     textAlign(CENTER, CENTER);
     text("WIN", width / 2, height / 28);
 
+}
+
+function winMessage() {
+    
     if (LR > 200 && LR < 600 && UD - 25 <= 40 && UD + 25 >= 0) {
         console.log("You Have Won The Game");
     }
+
+}
+
+function Border() {
+
+    fill(128, 128, 128)
+    rect(0, 0, 5, 600)
+    rect(795, 0, 5, 600)
+    rect(0, 0, 200, 5)
+    rect(0, 595, 800, 5)
+    rect(600, 0, 200, 5)
+
 }
 
 function mouseClicked() {
+    
     mousex = mouseX;
     mousey = mouseY;
+
 }
